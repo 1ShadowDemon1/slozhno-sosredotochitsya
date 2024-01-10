@@ -102,6 +102,7 @@
 
   .content {
     padding: 0 20px;
+    gap: 80px;
   }
 
   .background_height {
@@ -111,11 +112,11 @@
 
   .footer_height {
     height: calc(100vh - 40px);
-    margin: 10px 20px;
+    margin: 20px;
   }
 
-  .content {
-    gap: 80px;
+  .page:last-child {
+    gap: 55px;
   }
 
   .picture {
