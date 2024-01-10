@@ -1,5 +1,275 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 40px;
+  background-color: var(--page-color);
+}
+
+.header {
+  background-image: var(--background-header);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.background {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 20px);
+  position: relative;
+}
+
+.border_top {
+  position: absolute;
+  border-block-start: 1px solid var(--title-color-text);
+  border-inline-end: 1px solid var(--title-color-text);
+  width: 25px;
+  height: 25px;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.border_bottom {
+  position: absolute;
+  border-block-end: 1px solid var(--title-color-text);
+  border-inline-start: 1px solid var(--title-color-text);
+  width: 25px;
+  height: 25px;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: end;
+  height: 30%;
+  align-items: flex-end;
+  padding-block-end: 35px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  color: var(--title-color-text);
+  font-family: IBM Plex Mono;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 7px;
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-item:hover {
+  border: 1px solid var(--header__theme-menu-color);
+}
+
+.header__theme-menu-item:hover:active {
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button:focus) {
+  border-block-end: 1px solid var(--title-color-text);
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button:focus-visible) {
+  border: 1px solid var(--title-color-text);
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+}
+
+.title_header {
+  color: var(--header-color-title);
+  font-family: "IBM Plex mono";
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0px var(--header-color-title-shadow);
+}
+
+.margin_top {
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  color: var(--main-text-color);
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 23.4px;
+}
+
+.direction {
+  display: flex;
+  justify-content: end;
+  height: 25%;
+  align-items: center;
+}
+
+.title-decor {
+  background: var(--background-color-text);
+}
+
+.weihgt_text {
+  font-weight: 400;
+}
+
+.dark_rec_header {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  color: var(--title-color-text);
+  font-family: IBM Plex Mono;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 25px;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  inset-inline-end: 0;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--header-color-title-shadow);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--title-color-text);
+}
+
+.link:focus {
+  border: 1px solid var(--title-color-text);
+}
+
+.marker_off {
+  list-style-type: none;
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+  clip: rect(
+    0 0 0 0
+  ); /* это свойство обрезает видимую область до нулевого значения */
+}
+
+.marker_on {
+  content: "";
+  position: relative;
+  inset-block-end: -4px;
+  inset-inline-start: -5px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/Ellipse\ 4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.text_content {
+  color: var(--title-color-text);
+}
+
+.text_section {
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+h2 + h2,
+p + h2,
+h2 + .margin_text {
+  margin-block-start: 20px;
+}
+
+h2 + p {
+  margin-block-start: 10px;
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__item {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 20px);
+  position: relative;
+  margin: 10px;
+}
+
+.footer_title {
+  text-shadow: 2px 2px 0px var(--header-color-title-shadow);
+}
+
+.text_width {
+  width: 355px;
+}
+
+.flex_box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button_active) {
+  pointer-events: none;
+  border: 1px solid var(--title-color-text);
 }
