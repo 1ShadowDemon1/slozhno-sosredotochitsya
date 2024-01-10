@@ -6,6 +6,7 @@
   margin: auto;
   gap: 40px;
   background-color: var(--page-color);
+  background-attachment: fixed;
 }
 
 .header {
@@ -15,7 +16,7 @@
   background-size: cover;
 }
 
-.background {
+.background_height {
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -215,7 +216,8 @@
 
 h2 + h2,
 p + h2,
-h2 + .margin_text {
+h2 + .margin_text,
+h2 + .margin_section_text {
   margin-block-start: 20px;
 }
 
@@ -246,7 +248,7 @@ h2 + p {
   object-fit: cover;
 }
 
-.footer {
+.footer_height {
   display: flex;
   align-items: center;
   justify-content: center;

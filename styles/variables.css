@@ -45,6 +45,14 @@
   .text_width {
     width: 50%;
   }
+
+  .page {
+    gap: 60px;
+  }
+
+  h2 + .margin_section_text {
+    margin-block-start: 0;
+  }
 }
 
 @media (width >= 768px) {
@@ -59,7 +67,6 @@
   .min_width {
     min-width: 236px;
     max-width: 236px;
-    margin-block-start: 20px;
   }
   .photo {
     display: grid;
@@ -69,27 +76,22 @@
   }
 
   .picture_section_sun {
-    grid-area: content;
     grid-area: 1 / 1 / 2 / 3;
   }
 
   .picture_section_icecream {
-    grid-area: content;
     grid-area: 1 / 3 / 3 / 3;
   }
 
   .picture_section_video {
-    grid-area: content;
     grid-area: 2 / 1 / 4 / 2;
   }
 
   .picture_section_book {
-    grid-area: content;
     grid-area: 2 / 2 / 3 / 3;
   }
 
   .picture_section_street {
-    grid-area: content;
     grid-area: 3 / 2 / 4 / 4;
   }
 
@@ -102,22 +104,18 @@
     padding: 0 20px;
   }
 
-  .background {
+  .background_height {
     height: calc(100vh - 40px);
     margin: 20px;
   }
 
-  .footer {
-    margin: 30px 20px;
+  .footer_height {
     height: calc(100vh - 40px);
+    margin: 10px 20px;
   }
 
   .content {
-    gap: 60px;
-  }
-
-  .picture_gap {
-    margin-block-start: 20px;
+    gap: 80px;
   }
 
   .picture {
@@ -146,7 +144,6 @@
   .min_width {
     min-width: 315px;
     max-width: 315px;
-    margin-block-start: 20px;
   }
 
   .flex_box {
