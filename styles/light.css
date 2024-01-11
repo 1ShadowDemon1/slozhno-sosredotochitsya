@@ -13,8 +13,6 @@
 
   --header-color-title: #ffc2e6;
 
-  --header-color-title-shadow: #ff0070;
-
   --title-color-text: #353430;
 
   --background-color-text: #ff8dcb;
@@ -27,7 +25,5 @@
 
   --background-header: url(../images/cover-image-light.png);
 
-  .dark_rec_header {
-    z-index: -1;
-  }
+  --marker: -1;
 }

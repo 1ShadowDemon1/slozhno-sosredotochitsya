@@ -17,8 +17,6 @@
 
   --header-color-title: #db00ff;
 
-  --header-color-title-shadow: #ff0070;
-
   --main-text-color: #000028;
 
   --page-color: #000028;
@@ -26,4 +24,6 @@
   --header__theme-menu-color: rgba(255, 0, 112, 0.4);
 
   --background-header: url(../images/cover-image-dark.png);
+
+  --marker: 1;
 }

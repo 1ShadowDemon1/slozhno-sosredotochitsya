@@ -6,67 +6,65 @@
   margin: auto;
   gap: 40px;
   background-color: var(--page-color);
+  background-image: var(--background-header);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .header {
-  background-image: var(--background-header);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.background_height {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 20px);
   position: relative;
 }
 
-.border_top {
+.header::before {
+  content: "";
   position: absolute;
   border-block-start: 1px solid var(--title-color-text);
   border-inline-end: 1px solid var(--title-color-text);
   width: 25px;
   height: 25px;
-  inset-inline-end: 0;
-  inset-block-start: 0;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
-
-.border_bottom {
+.header::after {
+  content: "";
   position: absolute;
   border-block-end: 1px solid var(--title-color-text);
   border-inline-start: 1px solid var(--title-color-text);
   width: 25px;
   height: 25px;
-  inset-block-end: 0;
-  inset-inline-start: 0;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+}
+
+.header_size {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: max(668px, 100vh);
 }
 
 .header__theme-menu {
-  display: flex;
-  justify-content: end;
-  height: 30%;
-  align-items: flex-end;
-  padding-block-end: 35px;
+  align-self: center;
+  justify-self: end;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header__theme-menu-item {
   color: var(--title-color-text);
-  font-family: IBM Plex Mono;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
   line-height: 18px;
   text-align: center;
-  padding: 0 7px;
+  padding: 0 5px;
   border: 1px solid transparent;
 }
 
@@ -89,17 +87,22 @@
 }
 
 .header__theme-menu-item:has(.header__theme-menu-button:focus-visible) {
-  border: 1px solid var(--title-color-text);
+  border-block-end: 1px solid var(--title-color-text);
   outline: none;
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button_active) {
+  pointer-events: none;
+  border: 1px solid var(--title-color-text);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
 }
 
-.title_header {
+.title {
   color: var(--header-color-title);
-  font-family: "IBM Plex mono";
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
@@ -107,15 +110,14 @@
   text-shadow: 4px 4px 0px var(--header-color-title-shadow);
 }
 
-.margin_top {
-  height: 40%;
+.position_title {
   display: flex;
   align-items: center;
 }
 
 .text {
   color: var(--main-text-color);
-  font-family: IBM Plex Mono;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-size: 18px;
   font-style: normal;
@@ -125,7 +127,6 @@
 .direction {
   display: flex;
   justify-content: end;
-  height: 25%;
   align-items: center;
 }
 
@@ -137,12 +138,12 @@
   font-weight: 400;
 }
 
-.dark_rec_header {
+.rec_header {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 10px;
   color: var(--title-color-text);
-  font-family: IBM Plex Mono;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
@@ -150,12 +151,15 @@
   margin: 0;
   text-align: center;
   position: absolute;
-  inset-inline-end: 0;
+  inset-inline-end: 18px;
+  inset-block-start: 10px;
+  align-items: center;
+  z-index: var(--marker);
 }
 
 .link {
   text-decoration: none;
-  text-shadow: 2px 2px 0px var(--header-color-title-shadow);
+  text-shadow: 2px 2px 0px var(--background-color-text);
   border: 1px solid transparent;
   cursor: pointer;
 }
@@ -165,37 +169,16 @@
 }
 
 .link:focus {
-  border: 1px solid var(--title-color-text);
-}
-
-.marker_off {
-  list-style-type: none;
-}
-
-.visually-hidden {
-  position: absolute; /* элемент вырывают из потока */
-  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
-  height: 1px;
-  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
-  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
-  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
-  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
-  clip: rect(
-    0 0 0 0
-  ); /* это свойство обрезает видимую область до нулевого значения */
+  border: 1px solid var(--color-text);
+  outline: none;
 }
 
 .marker_on {
-  content: "";
-  position: relative;
-  inset-block-end: -4px;
-  inset-inline-start: -5px;
-  width: 20px;
-  height: 20px;
-  background-image: url(../images/Ellipse\ 4.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 4px 2px var(--background-color-text);
+  border-radius: 100%;
+  background-color: var(--background-color-text);
 }
 
 .content {
@@ -214,14 +197,16 @@
   color: var(--color-text);
 }
 
-h2 + h2,
-p + h2,
-h2 + .margin_text,
-h2 + .margin_section_text {
+h3 + .card_indentation,
+p + h3,
+p + p,
+h3 + .text_indent,
+h3 + .indent_section_text,
+.card_indentation + .card_indentation {
   margin-block-start: 20px;
 }
 
-h2 + p {
+h3 + p {
   margin-block-start: 10px;
 }
 
@@ -248,20 +233,41 @@ h2 + p {
   object-fit: cover;
 }
 
-.footer_height {
+.footer_size {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 20px);
+  height: max(668px, 100vh);
   position: relative;
-  margin: 10px;
+  padding: 10px;
+}
+
+.footer_size::before {
+  content: "";
+  position: absolute;
+  border-block-start: 1px solid var(--title-color-text);
+  border-inline-end: 1px solid var(--title-color-text);
+  width: 25px;
+  height: 25px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+.footer_size::after {
+  content: "";
+  position: absolute;
+  border-block-end: 1px solid var(--title-color-text);
+  border-inline-start: 1px solid var(--title-color-text);
+  width: 25px;
+  height: 25px;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
 }
 
 .footer_title {
   text-shadow: 2px 2px 0px var(--header-color-title-shadow);
 }
 
-.text_width {
+.text_length {
   width: 355px;
 }
 
@@ -269,9 +275,4 @@ h2 + p {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.header__theme-menu-item:has(.header__theme-menu-button_active) {
-  pointer-events: none;
-  border: 1px solid var(--title-color-text);
 }
