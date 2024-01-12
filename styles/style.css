@@ -269,7 +269,7 @@ h3 + p {
 }
 
 .footer_title {
-  text-shadow: 2px 2px 0px var(--header-color-title-shadow);
+  text-shadow: 2px 2px 0px var(--title-shadow);
 }
 
 .text_length {
