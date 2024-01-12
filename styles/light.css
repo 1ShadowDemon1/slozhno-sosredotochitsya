@@ -25,5 +25,7 @@
 
   --background-header: url(../images/cover-image-light.png);
 
-  --marker: -1;
+  --rec-box-shadow: none;
+
+  --rec-color: transparent;
 }
