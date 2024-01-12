@@ -350,12 +350,8 @@ h3 + p {
     padding: 20px;
   }
 
-  .footer_size {
-    padding: 10px 20px 30px; 
-  }
-
   .footer {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 
   .rec_header {
@@ -369,7 +365,7 @@ h3 + p {
   }
 
   .footer_size::before {
-    inset-block-start: 10px;
+    inset-block-start: 20px;
     inset-inline-end: 20px;
   }
 
@@ -379,7 +375,7 @@ h3 + p {
   }
 
   .footer_size::after {
-    inset-block-end: 30px;
+    inset-block-end: 20px;
     inset-inline-start: 20px;
   }
 
