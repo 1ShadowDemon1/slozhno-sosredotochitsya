@@ -16,21 +16,21 @@
   position: relative;
 }
 
-.header::before,
-.header::after {
+.decor_zone::before,
+.decor_zone::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
 }
 
-.header::before {
+.decor_zone::before {
   inset-inline-end: 10px;
   inset-block-start: 10px;
   border-block-start: 1px solid var(--title-color-text);
   border-inline-end: 1px solid var(--title-color-text);
 }
-.header::after {
+.decor_zone::after {
   border-block-end: 1px solid var(--title-color-text);
   border-inline-start: 1px solid var(--title-color-text);
   inset-block-end: 10px;
@@ -207,7 +207,8 @@ h3 + .indent_section_text,
   margin-block-start: 20px;
 }
 
-h3 + p {
+h3 + p,
+h4 + p {
   margin-block-start: 10px;
 }
 
@@ -247,27 +248,6 @@ h3 + p {
   padding: 10px;
 }
 
-.footer_size::before,
-.footer_size::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-}
-
-.footer_size::before {
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
-  border-block-start: 1px solid var(--title-color-text);
-  border-inline-end: 1px solid var(--title-color-text);
-}
-.footer_size::after {
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
-  border-block-end: 1px solid var(--title-color-text);
-  border-inline-start: 1px solid var(--title-color-text);
-}
-
 .footer_title {
   text-shadow: 2px 2px 0px var(--title-shadow);
 }
@@ -280,6 +260,7 @@ h3 + p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: space-between;
 }
 
 @media (width >= 588px) {
@@ -359,22 +340,12 @@ h3 + p {
     inset-block-start: 20px;
   }
 
-  .header::before {
+  .decor_zone::before {
     inset-inline-end: 20px;
     inset-block-start: 20px;
   }
 
-  .footer_size::before {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
-
-  .header::after {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
-  }
-
-  .footer_size::after {
+  .decor_zone::after {
     inset-block-end: 20px;
     inset-inline-start: 20px;
   }
@@ -399,10 +370,14 @@ h3 + p {
     max-width: 315px;
   }
 
+  .flex_section {
+    display: flex;
+    flex-direction: column;
+  }
+
   .flex_box {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .flex_box_content {
