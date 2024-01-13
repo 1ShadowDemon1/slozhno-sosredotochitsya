@@ -52,7 +52,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .header__theme-menu-item {
@@ -63,7 +63,7 @@
   font-style: normal;
   line-height: 18px;
   text-align: center;
-  padding: 0 5px;
+  padding: 0 6px 2px 5px;
   border: 1px solid transparent;
 }
 
