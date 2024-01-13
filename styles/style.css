@@ -377,6 +377,7 @@ h4 + p {
 
   .flex_box {
     flex-direction: row;
+    justify-self: center;
     flex-wrap: wrap;
   }
 
