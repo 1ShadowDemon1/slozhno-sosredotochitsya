@@ -370,11 +370,6 @@ h4 + p {
     max-width: 315px;
   }
 
-  .flex_section {
-    display: flex;
-    flex-direction: column;
-  }
-
   .flex_box {
     flex-direction: row;
     justify-self: center;
